@@ -1,0 +1,333 @@
+@font-face {
+    font-family: kalameh;
+    src: url(../fonts/KalamehFaNum-Regular.ttf) format("truetype");
+}
+
+body {
+    user-select: none;
+    font-family: "kalameh";
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .4s;
+}
+
+.primary-bg {
+    background-color: #57c6d2;
+}
+
+.bg-orange {
+    background-color: #fa4d09;
+}
+
+.bg-orange2 {
+    background-color: #ffab17;
+}
+
+.bg-purple {
+    background-color: #c027b9;
+}
+
+.bg-purple2 {
+    background-color: #7e57c6;
+}
+
+.bg-green {
+    background-color: #68c14a;
+}
+
+.text-purple {
+    color: #c027b9;
+}
+
+.text-orange {
+    color: #fa4d09;
+}
+
+.text-orange2 {
+    color: #ffab17;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+.w-200 {
+    width: 235px;
+}
+
+.rounded-4 {
+    border-radius: 1.3rem !important;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.continue {
+    width: 140px;
+    text-align: center;
+}
+
+.mt-6 {
+    margin-top: 375px !important;
+}
+
+/* header */
+header,
+footer {
+    background-color: #f2f2f2;
+}
+
+header>div>div:nth-child(2) img {
+    width: 24px;
+}
+
+header img[alt='logo'] {
+    width: 116px;
+}
+
+header ul li {
+    font-size: 13px;
+}
+
+header ul li a {
+    color: gray;
+}
+
+header ul li a:hover {
+    color: #57c6d2;
+}
+
+header form {
+    width: 144px;
+}
+
+header form input {
+    outline: none;
+}
+
+header form input:focus {
+    border: 2px solid #57c6d2 !important;
+}
+
+header form img {
+    height: 21px;
+    left: 9px;
+    top: 16px;
+    cursor: pointer;
+}
+
+/* mainSwiper */
+.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical>.swiper-pagination-bullets {
+    width: 26px !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #fa4d09;
+    width: 12px;
+    height: 12px;
+    transform: scale(1.5);
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 20px;
+    height: 12px;
+    width: 12px;
+}
+
+.mainSwiper {
+    height: 100vh;
+}
+
+/* banner */
+.mainSwiper .banner .swiper-slide {
+    background-position-x: 0px;
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    overflow-y: auto;
+}
+
+.banner {
+    height: 92vh;
+}
+
+#banner>div:nth-child(2) {
+    bottom: 87px;
+}
+
+.mainSwiper .banner .swiper-slide:nth-child(1) {
+    background-image: url('../img/4918cb567a1075f633c9edcd2ae45f18.jpg');
+}
+
+.mainSwiper .banner .swiper-slide:nth-child(2) {
+    background-image: url('../img/51b13be8c8df6f94f69623d6853afec7.jpg');
+}
+
+.mainSwiper .banner .swiper-slide:nth-child(3) {
+    background-image: url('../img/d32f9f80a2c3b4b6352c833683454fd6.jpg');
+}
+
+.mainSwiper .banner .swiper-slide:nth-child(4) {
+    background-image: url('../img/5f63c6254a19f9985580f8dccfe31eb3.jpg');
+}
+
+.mainSwiper .banner .swiper-slide:nth-child(5) {
+    background-image: url('../img/d7e305d05bb723bcac76ffd5ed9e81c6.jpg');
+}
+
+/* booking */
+.booking>div:first-child {
+    top: -28px;
+    left: 20px;
+    right: 20px;
+}
+
+.booking .number {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+.booking>p {
+    font-size: 12px;
+}
+
+.mainSwiper .tabs span {
+    cursor: pointer;
+    transition: all .4s;
+    border: 1px solid transparent;
+}
+
+.mainSwiper .tabs span:hover {
+    border: 1px solid gray;
+    background-color: lightgrey;
+}
+
+.mainSwiper .tabs span.active {
+    background-color: #57c6d2;
+    color: white;
+}
+
+#slides-entertainment,
+#services,
+#gallery,
+#shop,
+#food,
+footer {
+    background-image: url('../img/ride.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* slides-entertainment */
+#slides-entertainment span,
+#services span {
+    width: 77px;
+    height: 77px;
+    transition: all .4s;
+}
+
+#slides-entertainment span.active,
+#slides-entertainment span:hover {
+    background-color: #ffab17;
+    transform: scaleY(1.2);
+}
+
+.tabs-content {
+    opacity: 0;
+    transition: all .4s;
+}
+
+.tabs-content.active {
+    opacity: 1;
+}
+
+/* services */
+#services span.active,
+#services span:hover {
+    background-color: #c027b9;
+    transform: scaleY(1.2);
+}
+
+/* food */
+#food .name {
+    color: grey;
+    transition: all .4s;
+}
+
+#food .name:hover {
+    color: #fa4d09;
+}
+
+#food img {
+    width: 305px;
+    height: 225px;
+}
+
+#food .swiper-button-next::after,
+.swiper-button-prev::after {
+    color: #fa4d09;
+}
+@media only screen and (max-width:1200px) {
+    #main-menu{
+        position: fixed;
+        background-color: white;
+        top: 0;
+        bottom: 0;
+        left: -400px;
+        width: 277px;
+        z-index: 99;
+        transition: all .4s;
+    }
+    #main-menu.active{
+        left: 0;
+    }
+}
+@media only screen and (max-width:992px) {
+    header > div > div:nth-child(2) img {
+        width: 134px;
+      }
+    #banner .img-link img:first-child {
+        margin-bottom: -36px;
+    }
+
+    .booking>div:first-child {
+        position: static !important;
+    }
+
+    #banner>div:nth-child(2) {
+        top: 18px;
+    }
+
+    #slides-entertainment span {
+        width: 51px;
+        height: 51px;
+        font-size: 10px;
+    }
+
+    .mt-6 {
+        margin-top: 290px !important;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .services-img {
+        top: 144px;
+    }
+
+    #services .tabs-group {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 143px;
+    }
+}
+
+@media only screen and (max-width:576px) {}

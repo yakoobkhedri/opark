@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/css/styles.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <title>صفحه اصلی</title>
+</head>
+<style>
+    .swiper-pagination-vertical.swiper-pagination-bullets,
+    .swiper-vertical>.swiper-pagination-bullets {
+        width: 26px !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #fa4d09;
+        width: 12px;
+        height: 12px;
+        transform: scale(1.5);
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 20px;
+        height: 12px;
+        width: 12px;
+    }
+
+    .banner {
+        height: 92vh;
+    }
+
+    #banner>div:nth-child(2) {
+        bottom: 87px;
+    }
+
+    header form img {
+        height: 21px;
+        left: 9px;
+        top: 16px;
+        cursor: pointer;
+    }
+    @media only screen and (max-width:1200px) {
+        #main-menu{
+        position: fixed;
+        background-color: #07272b;
+        top: 0;
+        bottom: 0;
+        left: -400px;
+        width: 277px;
+        z-index: 99;
+        transition: all .4s;
+    }
+    #main-menu.active{
+        left: 0;
+    }
+    }
+    @media only screen and (max-width:992px) {
+
+        header>div>div:nth-child(2) img {
+            width: 134px;
+        }
+
+        #banner .img-link img:first-child {
+            margin-bottom: -36px;
+        }
+
+        .booking>div:first-child {
+            position: static !important;
+        }
+
+        #banner>div:nth-child(2) {
+            top: 18px;
+        }
+
+        #slides-entertainment span {
+            width: 51px;
+            height: 51px;
+            font-size: 10px;
+        }
+
+        .mt-6 {
+            margin-top: 290px !important;
+        }
+    }
+
+    @media only screen and (max-width:768px) {
+        .services-img {
+            top: 144px;
+        }
+
+        #services .tabs-group {
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 143px;
+        }
+    }
+
+    @media only screen and (max-width:576px) {}
+</style>
+
+<body>
+
+    <!-- header -->
+
+    <header class="py-2 fw-bold">
+        <div class="container-fluid row align-items-center justify-content-between">
+            <div class="d-flex align-items-center col-lg-5 col-4">
+                <!-- hamburger icon -->
+                <div class="d-xl-none cursor">
+                    <img id="hamburger-icon" src="https://opark.ir/assets/home/img/menu.png" alt="">
+                </div>
+                <!-- logo -->
+                <a class="d-none d-lg-block">
+                    <img alt="logo" src="assets/img/logo.png">
+                </a>
+                <!-- menu -->
+                <ul id="main-menu" class="list-unstyled d-flex flex-column flex-xl-row m-0 gap-3 pt-5 pt-xl-0">
+                    <li><a class="d-block">خدمات و بازی ها</a></li>
+                    <li><a class="d-block">شکم گردی</a></li>
+                    <li><a class="d-block">سرگرمی ها</a></li>
+                    <li><a class="d-block">گالری</a></li>
+                    <li><a class="d-block">قوانین</a></li>
+                    <li><a class="d-xl-none d-block">سوالات متداول</a></li>
+                    <li><a class="d-xl-none d-block">اخبار</a></li>
+                    <li><a class="d-xl-none d-block">درباره ما</a></li>
+                    <li><a class="d-xl-none d-block">فرصت های شغلی</a></li>
+                </ul>
+            </div>
+            <!-- user && book && support -->
+            <div class="col-lg-2 col-4">
+                <div
+                    class="d-lg-flex d-none align-items-center justify-content-center gap-4 p-2 rounded-pill primary-bg mx-auto">
+                    <a class="d-block"><img src="assets/img/users.png"></a>
+                    <a class="d-block"><img src="assets/img/book.png"></a>
+                    <a class="d-block"><img src="assets/img/support.png"></a>
+                </div>
+                <a class="d-block d-lg-none">
+                    <img alt="logo" src="assets/img/logo.png">
+                </a>
+            </div>
+            <div class="d-flex col-lg-5 col-4 align-items-center justify-content-xl-between justify-content-end">
+                <!-- menu -->
+                <ul class="list-unstyled d-none d-xl-flex m-0 gap-3">
+                    <li><a class="d-block">سوالات متداول</a></li>
+                    <li><a class="d-block">اخبار</a></li>
+                    <li><a class="d-block">درباره ما</a></li>
+                    <li><a class="d-block">فرصت های شغلی</a></li>
+                </ul>
+                <div class="d-flex">
+                    <!-- search -->
+                    <form class="position-relative bg-white rounded-pill d-none d-md-block">
+                        <img alt="search" src="assets/img/magnifier.png" class="position-absolute">
+                        <input type="search" class="w-100 h-100 rounded-pill border py-1 px-2" placeholder="جستجو...">
+                    </form>
+                    <!-- flag -->
+                    <a class="d-block">
+                        <img alt="flag" src="assets/img/flag_ir.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- main -->
+
+    <main>
+
+        <!-- main swiper -->
+
+        <div class="swiper mainSwiper">
+            <div class="swiper-wrapper">
+                <!-- banner -->
+                <section id="banner" class="swiper-slide position-relative">
+                    <div>
+                        <!-- swiper -->
+                        <div class="swiper banner">
+                            <div class="swiper-wrapper">
+                                <!-- slide -->
+                                <div class="swiper-slide">
+
+                                </div>
+                                <!-- slide -->
+                                <div class="swiper-slide">
+
+                                </div>
+                                <!-- slide -->
+                                <div class="swiper-slide">
+
+                                </div>
+                                <!-- slide -->
+                                <div class="swiper-slide">
+
+                                </div>
+                                <!-- slide -->
+                                <div class="swiper-slide">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-absolute container end-0 start-0 mx-auto z-10">
+                        <div
+                            class="d-none d-lg-flex flex-wrap align-items-center justify-content-center gap-4 mx-auto img-link">
+                            <a class="d-block"><img src="assets/img/shop-1.png" class="img-fluid"></a>
+                            <a class="d-block"><img src="assets/img/shop-2.png" class="img-fluid"></a>
+                        </div>
+                        <!-- booking -->
+                        <form class="bg-white mx-auto rounded-4 shadow-lg p-3 position-relative booking">
+                            <div
+                                class="d-flex flex-column flex-lg-row align-items-center justify-content-around gap-4 position-absolute">
+                                <a
+                                    class="rounded-pill flex-grow-1 bg-orange shadow-sm text-white fw-bold py-3 px-5 text-center">خرید
+                                    آنلاین بلیت</a>
+                                <div
+                                    class="d-flex bg-white rounded-pill flex-grow-1 border align-items-center justify-content-between shadow-sm gap-4 tabs p-2">
+                                    <span class="flex-grow-1 rounded-pill text-center py-2 px-5 active">آقایان</span>
+                                    <span class="flex-grow-1 rounded-pill text-center py-2 px-5">بانوان</span>
+                                </div>
+                                <a
+                                    class="d-flex bg-white rounded-pill flex-grow-1 border py-2 px-5 shadow-sm align-items-center justify-content-center gap-5">
+                                    <span class="text-secondary fw-bold">تقویم اپارکی</span>
+                                    <img src="assets/img/girl.png" alt="girl">
+                                </a>
+                            </div>
+                            <div class="row mt-3 g-2 mt-lg-5">
+                                <div class="col-lg-3">
+                                    <p class="fw-bold text-center mb-2">مشاهده هزینه</p>
+                                    <a
+                                        class="text-white mx-2 d-block fw-bold primary-bg rounded-pill text-center py-2 px-5">سبد
+                                        خرید</a>
+                                </div>
+                                <div class="col-lg-3 col-6">
+                                    <p class="fw-bold text-center mb-2">خردسال</p>
+                                    <div class="d-flex align-items-center justify-content-center gap-3">
+                                        <span class="cursor fw-bold">+</span>
+                                        <span
+                                            class="rounded-circle border fw-bold p-4 number d-flex align-items-center justify-content-center">2</span>
+                                        <span class="cursor fw-bold">-</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-6">
+                                    <p class="fw-bold text-center mb-2">بزرگسال</p>
+                                    <div class="d-flex align-items-center justify-content-center gap-3">
+                                        <span class="cursor fw-bold">+</span>
+                                        <span
+                                            class="rounded-circle border fw-bold p-4 number d-flex align-items-center justify-content-center">2</span>
+                                        <span class="cursor fw-bold">-</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <p class="fw-bold text-center mb-2">روز مورد نظر را انتخاب کنید</p>
+                                    <div class="mt-3">
+                                        <input type="date" class="form-control rounded-pill" value="1402/04/02">
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-center text-secondary fw-bold mt-2">
+                                قوانین پارک آبی را مطالعه کنید همچنین سوالات متداول را می توانید بررسی کنید و به انتخاب
+                                روز و ساعت خود دقت فرمایید حتما تقویم اپارک را مشاهده فرمایید.
+                            </p>
+                        </form>
+                    </div>
+                </section>
+                <!-- slides and entertainment -->
+                <section id="slides-entertainment"
+                    class="swiper-slide py-3 position-relative d-md-flex align-items-center justify-content-center">
+                    <div class="container">
+                        <div class="row g-5 g-lg-0 mt-lg-5">
+                            <div class="col-md-6 mb-5">
+                                <h6 class="bg-orange2 rounded-pill d-inline px-4 fw-bold py-1">سرسره ها و سرگرمی های
+                                    مهیج</h6>
+                                <div class="position-relative">
+                                    <div data-id="1" class="position-absolute tabs-content">
+                                        <h3 class="text-orange2 fw-bold mt-4">جکوزی</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">گرما می تواند فواید زیادی برای
+                                            بدن داشته
+                                            باشد؛ به خصوص برای دردها و گرفتگی های مفصلی و عضلانی ...
+                                        </p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="2" class="position-absolute tabs-content">
+                                        <h3 class="text-orange2 fw-bold mt-4">رودخانه خروشان</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">برای کمی آرامش، یک تیوپ بردارید و
+                                            به
+                                            رودخانه خروشان بروید! ...</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="3" class="position-absolute tabs-content">
+                                        <h3 class="text-orange2 fw-bold mt-4">استخر موج</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">دلتان برای سواحل دریا تنگ شده!
+                                            ...</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="4" class="position-absolute tabs-content">
+                                        <h3 class="text-orange2 fw-bold mt-4">رالی شیب</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">یک پیشنهاد ویژه برای کودکان عزیز
+                                            سرسره ای
+                                            مناسب برای دوستداران رقابت ...</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="5" class="position-absolute tabs-content">
+                                        <h3 class="text-orange2 fw-bold mt-4">گردالوپ</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">دوست داشتنی ترین سرسره ی اُپارک
+                                            ...</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="6" class="position-absolute tabs-content">
+                                        <h3 class="text-orange2 fw-bold mt-4">تونلی</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">حالِ خوبِ شما، هنگام پیاده شدن از
+                                            این
+                                            سرسره ی هیجان انگیز ...</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="7" class="position-absolute tabs-content">
+                                        <h3 class="text-orange2 fw-bold mt-4">بومرنگ</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">خالق یکی از زیباترین فرودهای دسته
+                                            جمعی
+                                            ...</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="8" class="position-absolute tabs-content">
+                                        <h3 class="text-orange2 fw-bold mt-4">جزیره گوگولیا</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">با خیالی راحت و آسوده، کودکان با
+                                            هم سن و
+                                            سالهای خودشان، بازی می کنند ...</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="9" class="position-absolute tabs-content active">
+                                        <h3 class="text-orange2 fw-bold mt-4">جزیره اُلوپیا</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">یک پیشنهاد ویژه برای کودکان عزیز
+                                            ...</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="10" class="position-absolute tabs-content">
+                                        <h3 class="text-orange2 fw-bold mt-4">آکوالوپ</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">آزادترین سقوط اُپارک، برای
+                                            دوستداران
+                                            آدرنالین ...</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="11" class="position-absolute tabs-content">
+                                        <h3 class="text-orange2 fw-bold mt-4">اُرنگ</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">رنگین کمان برای شما به ارمغان
+                                            آوردیم ...
+                                        </p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="12" class="position-absolute tabs-content">
+                                        <h3 class="text-orange2 fw-bold mt-4">اُپیچ</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">سرسره ای روباز، همراه با پیچ های
+                                            دوست
+                                            داشتنی ...
+                                        </p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="13" class="position-absolute tabs-content">
+                                        <h3 class="text-orange2 fw-bold mt-4">ابرشیب</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">در عرض سه ثانیه، بیشترین حس هیجان
+                                            را در
+                                            شما بوجود می آورد ...</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="14" class="position-absolute tabs-content">
+                                        <h3 class="text-orange2 fw-bold mt-4">اَبیس</h3>
+                                        <p class="text-secondary fw-bold mb-2 mb-lg-5">بزرگترین سرسره ی اُپارک است که
+                                            لذت یک
+                                            هیجان دسته جمعی را به شما خواهد بخشید ...</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-5 mt-lg-0 pt-5 pt-lg-0">
+                                <div class="position-relative">
+                                    <img data-id="1" alt="slides" src="assets/img/a5a6932546bb97699e6a427fb9c18a23.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0">
+                                    <img data-id="2" alt="slides" src="assets/img/59de84982365c6a258f91b7be3534318.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0">
+                                    <img data-id="3" alt="slides" src="assets/img/a8f3446680b799628ffaee4290b0bd36.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0">
+                                    <img data-id="4" alt="slides" src="assets/img/04e99edb118ceaf41e7975ab1378b6aa.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0">
+                                    <img data-id="5" alt="slides" src="assets/img/79f089a41e6bf5c8307e1c3a7d669cd5.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0">
+                                    <img data-id="6" alt="slides" src="assets/img/675517af02ef80771b614cb1b78daba9.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0">
+                                    <img data-id="7" alt="slides" src="assets/img/971baa6598de57b9a49bd6910f74e5b1.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0">
+                                    <img data-id="8" alt="slides" src="assets/img/480fbf94b5ceffb96c68e8274b5b4c93.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0">
+                                    <img data-id="9" alt="slides" src="assets/img/5e0a6ae1ef48655fd8ba81ce38aafe85.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0 active">
+                                    <img data-id="10" alt="slides" src="assets/img/a78a5d853ca4fe3dd4bd29611291b5ed.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0">
+                                    <img data-id="11" alt="slides" src="assets/img/7045373e4ab2498466ad8ab234510798.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0">
+                                    <img data-id="12" alt="slides" src="assets/img/1f238632c2fe0d9e43c79167225d321e.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0">
+                                    <img data-id="13" alt="slides" src="assets/img/df6a84a5b034bc9c5d854400df9669d0.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0">
+                                    <img data-id="14" alt="slides" src="assets/img/30027ff0232f1499300a164f636b7f22.jpg"
+                                        class="img-fluid position-absolute rounded-4 tabs-content mt-4 mt-lg-0">
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="d-flex flex-wrap flex-lg-nowrap align-items-center gap-2 justify-content-lg-between justify-content-center text-center mt-6 tabs-group">
+                            <span data-id="1"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">جکوزی</span>
+                            <span data-id="2"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">رودخانه
+                                خروشان</span>
+                            <span data-id="3"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">استخر
+                                موج</span>
+                            <span data-id="4"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">رالی
+                                شیب</span>
+                            <span data-id="5"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">گردالوپ</span>
+                            <span data-id="6"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">تونلی</span>
+                            <span data-id="7"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">بومرنگ</span>
+                            <span data-id="8"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">جزیره
+                                گوگولیا</span>
+                            <span data-id="9"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor active">جزیره
+                                الوپیا</span>
+                            <span data-id="10"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">آکوالوپ</span>
+                            <span data-id="11"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">اُرنگ</span>
+                            <span data-id="12"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">اُپیچ</span>
+                            <span data-id="13"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">ابرشیب</span>
+                            <span data-id="14"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">اَبیس</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- services -->
+                <section id="services"
+                    class="swiper-slide position-relative py-3 d-md-flex align-items-center justify-content-center">
+                    <div class="container">
+                        <div class="row g-5">
+                            <div class="col-md-6">
+                                <h6 class="bg-purple rounded-pill d-inline px-4 fw-bold py-1">خدمات</h6>
+                                <div class="position-relative">
+                                    <div data-id="1" class="position-absolute tabs-content active">
+                                        <h3 class="text-purple fw-bold mt-4">اوزون تراپی</h3>
+                                        <p class="text-secondary fw-bold mb-3">اوزون تراپی معجزه ای برای سلامتی!</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="2" class="position-absolute tabs-content">
+                                        <h3 class="text-purple fw-bold mt-4">فیش اِسپا</h3>
+                                        <p class="text-secondary fw-bold mb-3">یکی از باحال ترین حس های اُپارک، مربوط به
+                                            مجموعه ی فیش اِسپای اُپارک. مجموعه ای با خدماتی فوق العاده لذت بخش و عالی،
+                                            که
+                                            حال شما را بسیار خوب خواهد کرد!</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                    <div data-id="3" class="position-absolute tabs-content">
+                                        <h3 class="text-purple fw-bold mt-4">اِسپا</h3>
+                                        <p class="text-secondary fw-bold mb-3">ماساژ، نمونه ی بارز یه حالِ باحاله!
+
+                                            نرم و آهسته، چینی نازک خستگی های روزمره شما تَرَک می خوره و خارج میشه هر چی
+                                            کوفتگی و خستگی های بافت های عضلانیه از بدنتونه!</p>
+                                        <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="position-relative services-img">
+                                    <img data-id="1" alt="slides" src="assets/img/63e0154ba181b69d52f10cfecba53ff1.jpg"
+                                        class="img-fluid rounded-4 position-absolute tabs-content active">
+                                    <img data-id="2" alt="slides" src="assets/img/5bee05e6ae0999adf6b76df63b74b702.jpg"
+                                        class="img-fluid rounded-4 position-absolute tabs-content">
+                                    <img data-id="3" alt="slides" src="assets/img/2bccdf59e87deabe597faba35ff4d00e.jpg"
+                                        class="img-fluid rounded-4 position-absolute tabs-content">
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="d-flex align-items-center justify-content-md-start justify-content-center gap-3 text-center mt-6 tabs-group">
+                            <span data-id="1"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor active">اوزون
+                                تراپی</span>
+                            <span data-id="2"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">فیش
+                                اِسپا</span>
+                            <span data-id="3"
+                                class="text-white fw-bold rounded-4 p-2 d-flex align-items-center justify-content-center primary-bg cursor">اِسپا</span>
+                        </div>
+                    </div>
+                </section>
+                <!-- gallery -->
+                <section id="gallery" class="swiper-slide py-3 d-md-flex align-items-center justify-content-center">
+                    <div class="container">
+                        <h6 class="bg-purple2 rounded-pill d-inline px-4 fw-bold py-1 mb-5 mb-md-0">تور مجازی و گالری</h6>
+                        <div class="row mt-3 mt-md-5">
+                            <div class="col-md-6">
+                                <div class="row g-4">
+                                    <div class="col-3">
+                                        <img alt="gallery" src="assets/img/9ba3aa22ed7bd3a2aa15b5f960fc253a.jpg"
+                                            class="img-fluid rounded-4">
+                                    </div>
+                                    <div class="col-4">
+                                        <img alt="gallery" src="assets/img/fb15f11f7647f4ea7e538b7182928f13.jpg"
+                                            class="img-fluid rounded-4">
+                                    </div>
+                                    <div class="col-5">
+                                    </div>
+                                    <div class="col-3 d-none d-md-block">
+                                        <img alt="gallery" src="assets/img/1a0c2f4ff52a3b4ad1653c728fe4ff9f.jpg"
+                                            class="img-fluid rounded-4">
+                                    </div>
+                                    <div class="col-3 d-none d-md-block">
+                                        <img alt="gallery" src="assets/img/7d462dea5aae7a33a76b14f527d90858.jpg"
+                                            class="img-fluid rounded-4">
+                                    </div>
+                                    <div class="col-3 d-none d-md-block">
+                                        <img alt="gallery" src="assets/img/da6e2c84c47c8bcfbfe4e6692713b11d.jpg"
+                                            class="img-fluid rounded-4">
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-2 mt-3 mt-md-5 text-center text-md-end">گالری</h5>
+                                <a
+                                    class="rounded-pill py-1 px-5 primary-bg text-orange d-block d-md-inline-block text-center">ادامه</a>
+                            </div>
+                            <div class="col-md-6 mt-3 mt-md-0">
+                                <div>
+                                    <img alt="slides" src="assets/img/6.png" class="img-fluid rounded-4">
+                                    <h5 class="fw-bold mb-2 mt-1 text-center text-md-end">تور مجازی</h5>
+                                    <a
+                                        class="rounded-pill py-1 px-5 primary-bg text-orange d-block d-md-inline-block text-center">ادامه</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- shop -->
+                <section id="shop" class="swiper-slide d-md-flex justify-content-center align-items-center">
+                    <div class="container position-relative mt-5">
+                        <div class="swiper shop">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <h6 class="bg-green rounded-pill d-inline px-5 fw-bold py-1">فروشگاه ها</h6>
+                                            <h3 class="text-orange2 fw-bold mt-4">فروشگاه لوازم آبی ورزشی</h3>
+                                            <p class="text-secondary fw-bold mb-5">در فروشگاه  اُپارک انواع محصولات مورد
+                                                نیاز برای آب تنی را با بهترین کیفیت در اختیار شما قرار می دهد و شما می
+                                                توانید در صورت نیاز از محصولات فروشگاه ما خرید نمائید.</p>
+                                            <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div>
+                                                <img alt="slides" src="assets/img/54c7993089216ac9c776c3541df416e0.png"
+                                                    class="img-fluid rounded-4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <h6 class="bg-green rounded-pill d-inline px-5 fw-bold py-1">فروشگاه ها</h6>
+                                            <h3 class="text-orange2 fw-bold mt-4">فروشگاه لوازم آبی ورزشی</h3>
+                                            <p class="text-secondary fw-bold mb-5">در فروشگاه  اُپارک انواع محصولات مورد
+                                                نیاز برای آب تنی را با بهترین کیفیت در اختیار شما قرار می دهد و شما می
+                                                توانید در صورت نیاز از محصولات فروشگاه ما خرید نمائید.</p>
+                                            <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div>
+                                                <img alt="slides" src="assets/img/54c7993089216ac9c776c3541df416e0.png"
+                                                    class="img-fluid rounded-4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <h6 class="bg-green rounded-pill d-inline px-5 fw-bold py-1">فروشگاه ها</h6>
+                                            <h3 class="text-orange2 fw-bold mt-4">فروشگاه لوازم آبی ورزشی</h3>
+                                            <p class="text-secondary fw-bold mb-5">در فروشگاه  اُپارک انواع محصولات مورد
+                                                نیاز برای آب تنی را با بهترین کیفیت در اختیار شما قرار می دهد و شما می
+                                                توانید در صورت نیاز از محصولات فروشگاه ما خرید نمائید.</p>
+                                            <a class="rounded-pill py-1 px-5 primary-bg text-orange">ادامه</a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div>
+                                                <img alt="slides" src="assets/img/54c7993089216ac9c776c3541df416e0.png"
+                                                    class="img-fluid rounded-4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- food -->
+                <section id="food" class="swiper-slide d-md-flex align-items-center justify-content-center">
+                    <div class="container position-relative mt-5 mt-md-0">
+                        <h6 class="bg-danger rounded-pill d-inline px-5 fw-bold py-1">شکم گردی</h6>
+                        <!-- Swiper -->
+                        <div class="swiper food py-5">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img alt="food" src="assets/img/905b8841929ccfc7ff3638b311d520fe.jpg"
+                                        class="img-fluid rounded-4 mx-auto d-block">
+                                    <a class="fw-bold name d-block h5 text-center mt-3">فست فود</a>
+                                    <p class="mt-3 text-secondary text-center">
+                                        خوشمزه ترین طبقه ی اُپارک، طبقه ی سوم است. جایی که غذاهای تازه و خوشمزه آماده
+                                        اند تا لذت یک روز هیجان انگیز را برای شما چند برابر کنند!
+                                    </p>
+                                    <a
+                                        class="rounded-pill py-1 primary-bg text-orange d-block continue mx-auto">ادامه</a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img alt="food" src="assets/img/dc765af60344a09173335b441ae67046.jpg"
+                                        class="img-fluid rounded-4 mx-auto d-block">
+                                    <a class="fw-bold name d-block h5 text-center mt-3">جویس بار</a>
+                                    <p class="mt-3 text-secondary text-center">
+                                        بعد از اینهمه هیجان هیچ چیز نمیتونه مثل یه نوشیدنی خنک و طبیعی حالتون رو خوب کنه
+                                    </p>
+                                    <a
+                                        class="rounded-pill py-1 primary-bg text-orange d-block continue mx-auto">ادامه</a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img alt="food" src="assets/img/673b86a8da96b106bf3595f4492aaf3d.jpg"
+                                        class="img-fluid rounded-4 mx-auto d-block">
+                                    <a class="fw-bold name d-block h5 text-center mt-3">اُ کافه</a>
+                                    <p class="mt-3 text-secondary text-center">
+                                        یک فنجون قهوه یا چای دارچینی به همراه یک اسلایس کیک می تونه انرژی از دست رفته رو
+                                        برای ادامه بازی توی اُپارک بهتون برگردونه.
+                                    </p>
+                                    <a
+                                        class="rounded-pill py-1 primary-bg text-orange d-block continue mx-auto">ادامه</a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img alt="food" src="assets/img/905b8841929ccfc7ff3638b311d520fe.jpg"
+                                        class="img-fluid rounded-4 mx-auto d-block">
+                                    <a class="fw-bold name d-block h5 text-center mt-3">فست فود</a>
+                                    <p class="mt-3 text-secondary text-center">
+                                        خوشمزه ترین طبقه ی اُپارک، طبقه ی سوم است. جایی که غذاهای تازه و خوشمزه آماده
+                                        اند تا لذت یک روز هیجان انگیز را برای شما چند برابر کنند!
+                                    </p>
+                                    <a
+                                        class="rounded-pill py-1 primary-bg text-orange d-block continue mx-auto">ادامه</a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img alt="food" src="assets/img/dc765af60344a09173335b441ae67046.jpg"
+                                        class="img-fluid rounded-4 mx-auto d-block">
+                                    <a class="fw-bold name d-block h5 text-center mt-3">جویس بار</a>
+                                    <p class="mt-3 text-secondary text-center">
+                                        بعد از اینهمه هیجان هیچ چیز نمیتونه مثل یه نوشیدنی خنک و طبیعی حالتون رو خوب کنه
+                                    </p>
+                                    <a
+                                        class="rounded-pill py-1 primary-bg text-orange d-block continue mx-auto">ادامه</a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img alt="food" src="assets/img/673b86a8da96b106bf3595f4492aaf3d.jpg"
+                                        class="img-fluid rounded-4 mx-auto d-block">
+                                    <a class="fw-bold name d-block h5 text-center mt-3">اُ کافه</a>
+                                    <p class="mt-3 text-secondary text-center">
+                                        یک فنجون قهوه یا چای دارچینی به همراه یک اسلایس کیک می تونه انرژی از دست رفته رو
+                                        برای ادامه بازی توی اُپارک بهتون برگردونه.
+                                    </p>
+                                    <a
+                                        class="rounded-pill py-1 primary-bg text-orange d-block continue mx-auto">ادامه</a>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next">
+                            </div>
+                            <div class="swiper-button-prev">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- footer -->
+                <footer class="swiper-slide d-lg-flex align-items-center justify-content-center">
+                    <div class="container-fluid mt-4">
+                        <div class="row g-3">
+                            <div
+                                class="col-12 d-flex flex-column flex-lg-row align-items-center justify-content-around">
+                                <a
+                                    class="d-flex align-items-center border justify-content-between mb-3 pe-2 text-white fw-bold bg-purple rounded-pill w-200">
+                                    <span>راه های ارتباطی</span>
+                                    <img alt="" src="assets/img/question.png">
+                                </a>
+                                <a
+                                    class="d-flex align-items-center border justify-content-between mb-3 pe-2 text-secondary fw-bold rounded-pill w-200">
+                                    <span>نظرسنجی</span>
+                                    <img alt="" src="assets/img/poll.png" class="primary-bg rounded-circle">
+                                </a>
+                                <a
+                                    class="d-flex align-items-center border justify-content-between mb-3 pe-2 text-secondary fw-bold rounded-pill w-200">
+                                    <span>پیشنهادات و انتقادات</span>
+                                    <img alt="" src="assets/img/complain.png" class="primary-bg rounded-circle">
+                                </a>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="text-center mb-3">
+                                    <h6 class="fw-bold text-secondary">شماره تماس</h6>
+                                    <a>021-49264</a>
+                                </div>
+                                <div class="text-center mb-3">
+                                    <h6 class="fw-bold text-secondary">ایمیل</h6>
+                                    <a>info@opark.ir</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="text-center">
+                                    <h6 class="fw-bold text-secondary">آدرس</h6>
+                                    <a>اتوبان تهران-کرج. بعد از آزادگان. خروجی شهرک گلستان. انتهای خیابان شمیم.
+                                        اُپارک</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="d-flex align-items-center justify-content-center gap-2">
+                                    <a class="d-block">
+                                        <img alt="namad" src="assets/img/1bfa12bab426c93d5aefeeeb130f3bac.png"
+                                            class="img-fluid">
+                                    </a>
+                                    <a class="d-block">
+                                        <img alt="namad" src="assets/img/148208f3c9ddc6fe44b39d08453c18a5.png"
+                                            class="img-fluid">
+                                    </a>
+                                    <a class="d-block">
+                                        <img alt="namad" src="assets/img/51a1fa666e7a6c5a8ae6a7faf8b56316.jpg"
+                                            class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                            <div class="col-lg-12 d-none d-lg-block">
+                                <iframe class="rounded-4 border" id="map_canvas"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.211080277115!2d51.2377323150128!3d35.72102698018505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8dfb137e0c286b%3A0x4ff63a1399d021ea!2sOpark%20Water%20Park!5e0!3m2!1sen!2s!4v1579685038187!5m2!1sen!2s"
+                                    style="border:0;" allowfullscreen="" width="100%" height="300"
+                                    frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </main>
+
+    <!-- footer -->
+
+    <footer>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        // hamburger menu
+
+        let hamIcon=document.getElementById('hamburger-icon');
+        let mainMenu=document.getElementById('main-menu');
+
+        hamIcon.addEventListener('click',function () {
+            mainMenu.classList.toggle('active');
+        })
+
+
+
+        var swiper = new Swiper(".mainSwiper", {
+            direction: "vertical",
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 30,
+            mousewheel: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        })
+    </script>
+</body>
+
+</html>
